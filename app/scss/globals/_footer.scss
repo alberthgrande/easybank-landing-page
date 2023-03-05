@@ -1,0 +1,14 @@
+@use "../util" as color;
+@use "../util" as font;
+
+// footer
+.footer {
+  background: color.$dark-blue;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
