@@ -1,9 +1,7 @@
 @use "../util" as color;
 @use "../util" as font;
 
-@mixin devices($breakpoint) {
-  //the name of the mixin is devices
-
+@mixin footer($breakpoint) {
   @if $breakpoint == desktop {
     @media only screen and (min-width: 48rem) {
       @content;
@@ -26,7 +24,7 @@
   min-height: 11.875rem;
 
   // media query
-  @include devices(mobile) {
+  @include footer(mobile) {
     display: flex;
     flex-direction: column;
   }
@@ -39,7 +37,7 @@
 
     margin-top: 3.438rem;
 
-    @include devices(mobile) {
+    @include footer(mobile) {
       flex-direction: row;
       align-items: center;
     }
@@ -49,7 +47,7 @@
 .footer-nav {
   display: flex;
   gap: 2rem;
-  @include devices(mobile) {
+  @include footer(mobile) {
     gap: unset;
     flex-direction: column;
     text-align: center;
@@ -67,7 +65,7 @@
 }
 
 .copy-container {
-  @include devices(mobile) {
+  @include footer(mobile) {
     text-align: center;
   }
 }

@@ -7,11 +7,15 @@
   align-items: center;
   background: color.$white;
   height: 5rem;
+
+  // position
+  position: relative;
+  z-index: 1;
 }
 
 // nav-list
 .nav-main {
-  display: none;
+  // display: none;
 }
 .nav-list {
   display: flex;
