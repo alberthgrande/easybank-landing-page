@@ -9,12 +9,40 @@ body {
   background: color.$very-light-gray;
   min-height: 40.938rem;
 }
+
+// same
+.middle,
+.bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .middle {
   background: color.$light-grayish-blue;
   min-height: 42.188rem;
 }
+
+// bottom
 .bottom {
   min-height: 40.938rem;
+}
+.card-container {
+  margin: auto;
+
+  // layout
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  border: 2px solid green;
+  max-width: fit-content;
+}
+
+.card {
+  height: 395px;
+  width: 255px;
 }
 
 // request-invite

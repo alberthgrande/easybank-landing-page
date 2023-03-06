@@ -1,10 +1,80 @@
 @use "../util" as color;
 @use "../util" as font;
 
+@mixin devices($breakpoint) {
+  //the name of the mixin is devices
+
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: 48rem) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == mobile {
+    @media only screen and (max-width: 48rem) {
+      @content;
+    }
+  }
+}
+
 // footer
 .footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   background: color.$dark-blue;
-  min-eight: 11.875rem;
+  min-height: 11.875rem;
+
+  // media query
+  @include devices(mobile) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.footer-logos {
+  &-socials {
+    display: flex;
+    gap: 0.8rem;
+
+    margin-top: 3.438rem;
+
+    @include devices(mobile) {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+}
+
+.footer-nav {
+  display: flex;
+  gap: 2rem;
+  @include devices(mobile) {
+    gap: unset;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.footer-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.footer-nav-link {
+  color: color.$white;
+  text-decoration: none;
+}
+
+.copy-container {
+  @include devices(mobile) {
+    text-align: center;
+  }
+}
+
+.copy {
+  color: color.$grayish-blue;
+  margin-top: 3.438rem;
 }
 .attribution {
   font-size: 11px;
