@@ -4,3 +4,21 @@
 body {
   font-family: font.$font-family;
 }
+
+.top {
+  background: color.$very-light-gray;
+  min-height: 40.938rem;
+}
+.middle {
+  background: color.$light-grayish-blue;
+  min-height: 42.188rem;
+}
+.bottom {
+  min-height: 40.938rem;
+}
+
+// request-invite
+.request-invite {
+  text-decoration: none;
+  background: linear-gradient(130deg, color.$lime-green, color.$bright-cyan);
+}

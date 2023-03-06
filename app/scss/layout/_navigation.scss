@@ -1,0 +1,29 @@
+@use "../util" as color;
+@use "../util" as font;
+
+.nav-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: color.$white;
+  height: 5rem;
+}
+
+// nav-list
+
+.nav-list {
+  display: flex;
+  gap: 1rem;
+
+  list-style: none;
+
+  .nav-link {
+    text-decoration: none;
+    color: color.$grayish-blue;
+  }
+}
+
+// toggle button
+.btn-mobile-nav {
+  display: none;
+}

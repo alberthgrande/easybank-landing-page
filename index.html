@@ -9,7 +9,7 @@
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./images/favicon-32x32.png"
+      href="./app/images/favicon-32x32.png"
     />
 
     <title>Frontend Mentor | Easybank landing page</title>
@@ -26,23 +26,37 @@
     <link rel="stylesheet" href="./dist/style.css" />
   </head>
   <body>
-    <header>
-      <img src="./app/images/logo.svg" alt="Easybank logo" />
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Careers</a></li>
-        </ul>
-      </nav>
-      <a href="#"> Request Invite </a>
+    <header class="header">
+      <div class="nav-container">
+        <img src="./app/images/logo.svg" alt="Easybank logo" />
+        <nav class="nav-main">
+          <ul class="nav-list">
+            <li><a href="#" class="nav-link">Home</a></li>
+            <li><a href="#" class="nav-link">About</a></li>
+            <li><a href="#" class="nav-link">Contact</a></li>
+            <li><a href="#" class="nav-link">Blog</a></li>
+            <li><a href="#" class="nav-link">Careers</a></li>
+          </ul>
+        </nav>
+        <a href="#" class="request-invite"> Request Invite </a>
+        <button class="btn-mobile-nav">
+          <img
+            class="open-icon"
+            src="./app/images/icon-hamburger.svg"
+            alt="Hamburger menu"
+          />
+          <img
+            class="close-icon"
+            src="./app/images/icon-close.svg"
+            alt="Close menu"
+          />
+        </button>
+      </div>
     </header>
 
     <main>
       <div class="container">
-        <section>
+        <section class="top">
           <h1>Next generation digital banking</h1>
 
           <p>
@@ -51,10 +65,10 @@
             more.
           </p>
 
-          <a href="#">Request Invite</a>
+          <a href="#" class="request-invite">Request Invite</a>
         </section>
 
-        <section>
+        <section class="middle">
           <article>
             <h2>Why choose Easybank?</h2>
 
@@ -97,7 +111,7 @@
           </article>
         </section>
 
-        <section>
+        <section class="bottom">
           <h2>Latest Articles</h2>
 
           <article>
@@ -152,19 +166,19 @@
       <div>
         <div>
           <a href="#">About Us</a>
-          <a href="">Contact</a>
-          <a href="">Blog</a>
+          <a href="#">Contact</a>
+          <a href="#">Blog</a>
         </div>
         <div>
-          <a href="">Careers</a>
-          <a href="">Support</a>
-          <a href="">Privacy</a>
-          <a href="">Policy</a>
+          <a href="#">Careers</a>
+          <a href="#">Support</a>
+          <a href="#">Privacy</a>
+          <a href="#">Policy</a>
         </div>
       </div>
 
       <div>
-        <a href="#">Request Invite</a>
+        <a href="#" class="request-invite">Request Invite</a>
         <p>© Easybank. All Rights Reserved</p>
       </div>
     </footer>
