@@ -297,13 +297,13 @@ body {
     margin-top: 40px;
   }
 
-  &-bottom-img {
-    height: 200px;
-    object-fit: cover;
-  }
-
   .bottom-card {
     background: color.$white;
     height: 395px;
   }
+}
+
+.card-bottom-img {
+  height: 200px;
+  object-fit: cover;
 }
