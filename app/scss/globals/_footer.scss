@@ -42,6 +42,11 @@
       align-items: center;
     }
   }
+  &-socials img:hover {
+    cursor: pointer;
+    filter: invert(50%) sepia(64%) saturate(1523%) hue-rotate(80deg)
+      brightness(91%) contrast(100%);
+  }
 }
 
 .footer-nav {
@@ -62,6 +67,10 @@
 .footer-nav-link {
   color: color.$white;
   text-decoration: none;
+}
+
+.footer-nav-link:hover {
+  color: color.$lime-green;
 }
 
 .copy-container {

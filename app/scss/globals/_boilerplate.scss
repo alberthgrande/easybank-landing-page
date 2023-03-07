@@ -68,7 +68,7 @@ body {
     float: left;
     position: absolute;
     top: 180px;
-    left: 165px;
+    left: 125px;
     max-width: 430px;
 
     &-title {
@@ -80,6 +80,12 @@ body {
       margin: 40px 0;
     }
   }
+}
+
+.mockups {
+  position: absolute;
+  top: -2.95rem;
+  right: -8rem;
 }
 
 // middle
