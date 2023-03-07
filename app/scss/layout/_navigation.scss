@@ -73,13 +73,43 @@
 }
 
 @media only screen and (max-width: 48rem) {
-  .nav-main,
   .header-link {
     display: none;
+  }
+  .nav-main {
+    display: none;
+    background: color.$white;
+    box-shadow: rgba(45, 49, 77, 0.5) 0px -50px 100px 100px;
+    border-radius: 0.3rem;
+    position: absolute;
+    top: 120px;
+    width: 80%;
+    z-index: -3;
+  }
+
+  .nav-list {
+    // layout
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // margin-left: -2rem;
+    padding: 2rem;
+  }
+
+  .nav-main.active {
+    display: block;
   }
 
   // toggle button
   .btn-mobile-nav {
+    display: block;
+  }
+
+  .open-icon.open {
+    display: none;
+  }
+
+  .close-icon.open {
     display: block;
   }
 }
