@@ -10,6 +10,18 @@ body {
 body {
   font-family: font.$font-family;
 }
+// request-invite
+.request-invite {
+  display: block;
+  background: linear-gradient(130deg, color.$lime-green, color.$bright-cyan);
+  border-radius: 50px;
+  color: color.$white;
+  font-size: 12px;
+  padding: 0.7rem;
+  width: 150px;
+  text-decoration: none;
+  text-align: center;
+}
 
 @mixin body($breakpoint) {
   @if $breakpoint == desktop {
@@ -20,6 +32,12 @@ body {
 
   @if $breakpoint == laptop {
     @media only screen and (max-width: 71.875rem) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tablet1 {
+    @media only screen and (max-width: 37.5rem) {
       @content;
     }
   }
@@ -40,10 +58,9 @@ body {
 // same
 .middle,
 .bottom {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  // align-items: center;
+  display: grid;
+  place-content: center;
+  align-items: start;
 }
 
 // top
@@ -63,6 +80,8 @@ body {
     color: color.$grayish-blue;
     &-title {
       color: color.$dark-blue;
+      font-weight: font.$fw-300;
+      line-height: 1.2;
     }
   }
   @include body(desktop) {
@@ -79,8 +98,6 @@ body {
 
       &-title {
         font-size: 3rem;
-        font-weight: font.$fw-300;
-        line-height: 1.2;
       }
 
       &-text {
@@ -98,31 +115,53 @@ body {
       color: color.$very-light-gray;
       image: url(../app/images/bg-intro-desktop.svg);
       repeat: no-repeat;
-      position: top -16rem right -32.5rem;
+      position: top -35rem right -32.5rem;
     }
 
     display: flex;
     flex-direction: column-reverse;
 
+    &-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      &-title {
+        font-size: 2rem;
+      }
+
+      &-text {
+        font-size: 14px;
+        margin: 1.5rem;
+      }
+    }
     // mockups
     .mockups {
-      height: 600px;
+      height: 550px;
       top: -8rem;
     }
   }
 
   @include body(tablet) {
+    &-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      &-title {
+        font-size: 2.5rem;
+        line-height: 1.3;
+      }
+      &-text {
+        font-size: 14px;
+      }
+    }
+
     // mockups
     .mockups {
       height: 470px;
       top: -6rem;
-    }
-
-    &-content {
-      text-align: center;
-      &-title {
-        font-size: 2.5rem;
-      }
     }
   }
 
@@ -145,105 +184,116 @@ body {
 .middle {
   background: color.$light-grayish-blue;
   min-height: 42.188rem;
-  &-content {
-    position: relative;
-    left: 115px;
-    max-width: 615px;
 
-    h2 {
-      font-size: 2rem;
-      font-weight: font.$fw-300;
-    }
-    @include body(laptop) {
-      margin: auto;
-      position: unset;
+  &-content {
+    color: color.$grayish-blue;
+    margin-top: 60px;
+    max-width: 615px;
+    @include body(tablet) {
       text-align: center;
     }
+    h2 {
+      color: color.$dark-blue;
+      font-weight: font.$fw-400;
+    }
+
+    p {
+      margin-top: 40px;
+    }
   }
-}
-.middle-card-title {
-  margin: 45px 0 30px;
 }
 // bottom
 .bottom {
   background: color.$very-light-gray;
   min-height: 40.938rem;
+
   &-content {
-    position: relative;
-    left: 115px;
-    max-width: 615px;
-
     h2 {
-      font-size: 2rem;
-      font-weight: font.$fw-300;
-    }
-
-    @include body(laptop) {
-      position: unset;
-      text-align: center;
+      color: color.$dark-blue;
+      font-weight: font.$fw-400;
+      margin: 90px 0 55px;
     }
   }
 }
 
-// card
+// card container
 .card-container {
-  display: flex;
-  // align-items: center;
-  flex-wrap: wrap;
+  display: grid;
   gap: 2rem;
-  justify-content: center;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 1110px;
+  margin-bottom: 80px;
 
-  margin-top: 55px;
-}
+  @include body(laptop) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-.card {
-  height: 395px;
-  width: 255px;
+  @include body(tablet1) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .card {
+    margin: auto;
+    color: color.$grayish-blue;
+    border-radius: 0.3rem;
+    overflow: hidden;
+    width: 255px;
+
+    // card middle
+    &-middle-icon {
+      margin-top: 75px;
+      @include body(tablet) {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    &-middle-title {
+      color: color.$dark-blue;
+      font-weight: font.$fw-400;
+      margin: 45px 0 30px;
+    }
+
+    // content
+    &-content {
+      padding: 1.5rem 1rem;
+
+      &-title {
+        color: color.$dark-blue;
+        cursor: pointer;
+        font-size: font.$font-size;
+        font-weight: color.$fw-400;
+        line-height: 1;
+        margin: 0.5rem 0;
+      }
+      &-title:hover {
+        color: color.$lime-green;
+      }
+      &-name {
+        font-size: 11px;
+        font-weight: color.$fw-300;
+      }
+      &-text {
+        font-size: 13px;
+      }
+    }
+  }
+
+  .middle-card {
+    @include body(tablet) {
+      text-align: center;
+    }
+  }
+  .middle-text {
+    margin-top: 40px;
+  }
 
   &-bottom-img {
     height: 200px;
     object-fit: cover;
   }
 
-  &-content {
-    color: color.$grayish-blue;
-    padding: 1.5rem 1rem 1rem;
-
-    .content-name {
-      font-size: 11px;
-      font-weight: font.$fw-300;
-    }
-
-    .content-title {
-      color: color.$dark-blue;
-      cursor: pointer;
-      font-size: 1rem;
-      font-weight: font.$fw-400;
-      margin: 0.5rem 0;
-    }
-
-    .content-title:hover {
-      color: color.$lime-green;
-    }
-
-    .content-text {
-      font-size: 12px;
-    }
+  .bottom-card {
+    background: color.$white;
+    height: 395px;
   }
-}
-
-.bottom-card {
-  background: color.$white;
-  border-radius: 0.5rem;
-  overflow: hidden;
-}
-
-// request-invite
-.request-invite {
-  background: linear-gradient(130deg, color.$lime-green, color.$bright-cyan);
-  border-radius: 50px;
-  color: color.$white;
-  font-size: 1rem;
-  padding: 0.7rem;
-  text-decoration: none;
 }
