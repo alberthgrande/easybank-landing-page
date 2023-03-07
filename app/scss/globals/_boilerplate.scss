@@ -60,6 +60,10 @@ body {
   }
   &-content {
     max-width: 26.875rem;
+    color: color.$grayish-blue;
+    &-title {
+      color: color.$dark-blue;
+    }
   }
   @include body(desktop) {
     background: {
@@ -76,7 +80,7 @@ body {
       &-title {
         font-size: 3rem;
         font-weight: font.$fw-300;
-        line-height: 1.3;
+        line-height: 1.2;
       }
 
       &-text {
@@ -143,12 +147,17 @@ body {
   min-height: 42.188rem;
   &-content {
     position: relative;
-    left: 120px;
+    left: 115px;
     max-width: 615px;
 
     h2 {
       font-size: 2rem;
       font-weight: font.$fw-300;
+    }
+    @include body(laptop) {
+      margin: auto;
+      position: unset;
+      text-align: center;
     }
   }
 }
@@ -161,12 +170,17 @@ body {
   min-height: 40.938rem;
   &-content {
     position: relative;
-    left: 120px;
+    left: 115px;
     max-width: 615px;
 
     h2 {
       font-size: 2rem;
       font-weight: font.$fw-300;
+    }
+
+    @include body(laptop) {
+      position: unset;
+      text-align: center;
     }
   }
 }
@@ -174,7 +188,7 @@ body {
 // card
 .card-container {
   display: flex;
-  align-items: center;
+  // align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
@@ -192,15 +206,24 @@ body {
   }
 
   &-content {
+    color: color.$grayish-blue;
     padding: 1.5rem 1rem 1rem;
 
     .content-name {
       font-size: 11px;
+      font-weight: font.$fw-300;
     }
 
     .content-title {
+      color: color.$dark-blue;
+      cursor: pointer;
       font-size: 1rem;
+      font-weight: font.$fw-400;
       margin: 0.5rem 0;
+    }
+
+    .content-title:hover {
+      color: color.$lime-green;
     }
 
     .content-text {
