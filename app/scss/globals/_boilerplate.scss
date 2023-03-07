@@ -189,6 +189,9 @@ body {
     color: color.$grayish-blue;
     margin-top: 60px;
     max-width: 615px;
+    @include body(laptop) {
+      text-align: center;
+    }
     @include body(tablet) {
       text-align: center;
     }
@@ -208,6 +211,13 @@ body {
   min-height: 40.938rem;
 
   &-content {
+    color: color.$grayish-blue;
+    @include body(laptop) {
+      text-align: center;
+    }
+    @include body(tablet) {
+      text-align: center;
+    }
     h2 {
       color: color.$dark-blue;
       font-weight: font.$fw-400;

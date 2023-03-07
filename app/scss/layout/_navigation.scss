@@ -1,6 +1,20 @@
 @use "../util" as color;
 @use "../util" as font;
 
+// @mixin navigation($breakpoint) {
+//   @if $breakpoint == desktop {
+//     @media only screen and (min-width: 48rem) {
+//       @content;
+//     }
+//   }
+
+//   @if $breakpoint == mobile {
+//     @media only screen and (max-width: 48rem) {
+//       @content;
+//     }
+//   }
+// }
+
 .nav-container {
   display: flex;
   justify-content: space-around;
@@ -14,9 +28,7 @@
 }
 
 // nav-list
-.nav-main {
-  // display: none;
-}
+
 .nav-list {
   display: flex;
   gap: 1rem;
@@ -51,5 +63,23 @@
 
 // toggle button
 .btn-mobile-nav {
+  background: none;
+  border: none;
+  cursor: pointer;
   display: none;
+}
+.close-icon {
+  display: none;
+}
+
+@media only screen and (max-width: 48rem) {
+  .nav-main,
+  .header-link {
+    display: none;
+  }
+
+  // toggle button
+  .btn-mobile-nav {
+    display: block;
+  }
 }
